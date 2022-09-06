@@ -1,3 +1,9 @@
+update users set issmoking=NULL WHERE issmoking='';
+alter table users alter column issmoking type boolean using issmoking::boolean;
+
+update users set income=NULL WHERE income='';
+alter table users alter column income type real using income::real;
+
 /* How many total messages are being sent every day? */
 select createdat::date "day",count(*) from messages group by 1;
 

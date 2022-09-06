@@ -101,7 +101,6 @@ def transform_messages(messages_url,messages_columns):
     print("transforming messages is started")
     messages = from_json_to_df(messages_url,messages_columns)
     print("transforming messages is completed")
-    print(messages.info())
     return messages
 
 def transform_subscription(users_df):
@@ -109,7 +108,6 @@ def transform_subscription(users_df):
     subs_df = create_subscription_df(users_df)
     subs_df = subs_df.rename(columns={'status':'subs_status'})
     print("transforming users is completed")
-    print(subs_df.info())
     return subs_df
 
 def main(**kwargs):
